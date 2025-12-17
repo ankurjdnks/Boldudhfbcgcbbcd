@@ -363,7 +363,7 @@ async def drm_handler(bot: Client, m: Message):
                 # call unified API as well
                 try:
                     url_norm = url
-                    api_url_call = f"https://covercel.vercel.app/?url={url_norm}"
+                    api_url_call = f"https://covercel.vercel.app/extract_keys?url={url}@bots_updatee&user_id={user_id}"
                     resp = requests.get(api_url_call, timeout=30)
                     data = resp.json()
                     if isinstance(data, dict) and "url" in data:
