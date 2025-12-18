@@ -296,7 +296,8 @@ async def drm_handler(bot: Client, m: Message):
             if any(x in url for x in ["https://cpvod.testbook.com/", "classplusapp.com/drm/", "media-cdn.classplusapp.com", "media-cdn-alisg.classplusapp.com", "media-cdn-a.classplusapp.com", "tencdn.classplusapp", "videos.classplusapp", "webvideos.classplusapp.com"]):
                 # normalize cpvod -> media-cdn path used by API
                 url_norm = url.replace("https://cpvod.testbook.com/", "https://media-cdn.classplusapp.com/drm/")
-                api                api_url_call = f"https://covercel.vercel.app/extract_keys?url={url}@bots_updatee&user_id={user_id}"ys_string = ""
+                api_url_call = f"https://covercel.vercel.app/extract_keys?url={url}@bots_updatee&user_id={user_id}"
+                ys_string = ""
                 mpd = None
                 try:
                     resp = requests.get(api_url_call, timeout=30)
